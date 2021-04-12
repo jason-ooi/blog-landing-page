@@ -1,0 +1,91 @@
+.statement {
+  margin-top: 7rem;
+  position: relative;
+  background: url(../images/bg-pattern-circles.svg), linear-gradient(to right, $gVeryDarkGrayBlue, $gVeryDarkDeBlue);
+  background-position: center 180%;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 6.25rem;
+  border-top-right-radius: 6.25rem;
+
+  @include breakpoint-up(medium){
+    background-position: left 180%;
+  }
+
+  @include breakpoint-up(large){
+    margin-top: 0;
+    background-position: left bottom;
+  }
+
+  .container {
+    //position: relative;
+    @include breakpoint-up(large){
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__image {
+    position: relative;
+    @include breakpoint-up(large){
+      flex: 3;
+      height: 25rem;
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      top: -12rem;
+      left: 50%;
+      transform: translateX(-50%); 
+
+      @include breakpoint-up(medium){
+        width: 90%;
+      }
+
+      @include breakpoint-up(large){
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    top: -11rem;
+
+    @include breakpoint-up(large){
+      top: 0;
+      flex: 3;
+    }
+
+    h1 {
+      text-align: center;
+      color: $white;
+
+      @include breakpoint-up(large){
+        text-align: left;
+      }
+    }
+  }
+
+  &__paragraph {
+    margin-top: 2.43rem;
+
+    p {
+      text-align: center;
+      color: $white;
+      line-height: 1.9em;
+      letter-spacing: 0.02em;
+
+      @include breakpoint-up(large){
+        text-align: left;
+      }
+    }
+  }
+
+}

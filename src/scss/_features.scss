@@ -1,0 +1,74 @@
+.features {
+  padding-top: 5rem;
+  padding-bottom: 6.25rem;
+  // border: 1px solid blue;
+
+  @include breakpoint-up(large){
+    padding-top: 18rem;
+    padding-bottom: 14.5rem;
+    background-image: url(../images/illustration-laptop-desktop.svg);
+    width: 100%;
+    background-size: 55%;
+    background-position: -11% center;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    @include breakpoint-up(large){
+      display: flex;
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-bottom: 3.8rem;
+
+    @include breakpoint-up(large){
+      flex: 1 0 50%;
+    }
+
+    img {
+      position: relative;
+      width: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include breakpoint-up(large){
+        display: none;
+      }
+    }
+  }
+
+  &__text-box {
+    @include breakpoint-up(large){
+      flex: 1 0 45%;
+      padding-top: 3rem;
+    }
+  }
+
+  &__title-2, &__title-3 {
+    h4 {
+      text-align: center;
+      line-height: 1.22em;
+      padding: 0 0.625rem 1.875rem 0.625rem;
+
+      @include breakpoint-up(large){
+        text-align: left;
+        padding: 0 0 2.2rem 0;
+      }
+    }
+  }
+
+  &__paragraph {
+    padding-bottom: 3.5rem;
+    text-align: center;
+    line-height: 1.8em;
+    letter-spacing: 0.040em;
+
+    @include breakpoint-up(large){
+      padding-bottom: 5.5rem;
+      text-align: left;
+    }
+  }
+
+}

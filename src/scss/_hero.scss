@@ -1,0 +1,66 @@
+.hero {
+  background-image: linear-gradient(to right, $gVeryLightRed, $gLightred);
+  border-bottom-left-radius: 6.25rem;
+  position: relative;
+  
+  &__image {
+    content: "";
+    position: absolute;
+    background-image: url(../images/bg-pattern-intro.svg);
+    background-size: 90rem, cover;
+    background-repeat: no-repeat;
+    background-position: 33% 44%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom-left-radius: 6.25rem;
+    z-index: 0;
+
+    @include breakpoint-up(medium){
+      background-size: 116rem, cover;
+      background-position: 28% 52%;
+    }
+
+    @include breakpoint-up(large){
+      background-size: 226rem, cover;
+      background-position: 25% 52%;
+    }
+  }
+
+  .wrap {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  &__title {
+    position: relative;
+    color: $white;
+    text-align: center;
+  }
+
+  &__slogan {
+    position: relative;
+    margin-top: 1.5rem;
+    color: $white;
+    text-align: center;
+
+    p {
+      font-size: 1.125rem;
+      font-weight: 300;
+    
+      @include breakpoint-up(large){
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  &__links {
+    margin-top: 3.37rem;
+    gap: 1em;
+
+    .item1 {
+      flex: 0 1 auto;
+    }
+  }
+}

@@ -1,0 +1,200 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Overpass', 'Ubuntu', sans-serif;
+  line-height: 1.3;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: $white;
+  color: $darkGrayishBlue;
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+// Font, Text
+h1, h2, h3, h4 {
+  font-family: 'Overpass', 'sans-serif';
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.075rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.075rem;
+
+  @include breakpoint-up(medium){
+    font-size: 2.8rem;
+  }
+
+  @include breakpoint-up(large){
+    font-size: 4rem;
+  }
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+
+  @include breakpoint-up(large){
+    font-size: 2.5rem;
+  }
+}
+
+h4 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 300;
+}
+
+// Links
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: $font-md;
+  font-weight: 500;
+  color: $white;
+}
+
+// Spacing
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+
+  &--px {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+
+    @include breakpoint-up(medium) {
+      padding-right: 4.5rem;
+      padding-left: 4.5rem;
+    }
+
+    @include breakpoint-up(large) {
+      padding-right: 10.37rem;
+      padding-left: 10.37rem;
+    }
+  }
+
+  &--py {
+    padding-top: 13rem;
+    padding-bottom: 9.6rem;
+
+    @include breakpoint-up(large){
+      padding-top: 16rem;
+    }
+  }
+}
+
+// Flexbox
+.flex {
+  display: flex;
+
+  &-w{
+    flex-wrap: wrap;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-jc-fe {
+    justify-content: flex-end;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+  &-ai-s {
+    align-items: flex-start;
+  }
+
+}
+
+// Button
+.button-white {
+  position: relative;
+  display: inline-block;
+  background-color: $white;
+  border: 0;
+  border-radius: 50px;
+  color: $lightRed;
+  font-weight: 700;
+  font-size: $font-md;
+  cursor: pointer;
+  width: 137px;
+  height: 48px;
+  text-align: center;
+  line-height: 2.75;
+  
+  &:hover {
+    background-color: $veryLightRed;
+    color: $white;
+    transition: all 150ms ease-in-out;
+  }
+}
+
+.button-outline {
+  position: relative;
+  display: inline-block;
+  border: 1px solid $white;
+  border-radius: 50px;
+  color: $white;
+  font-weight: 700;
+  font-size: $font-md;
+  cursor: pointer;
+  width: 137px;
+  height: 48px;
+  text-align: center;
+  line-height: 2.75;
+  
+  &:hover {
+    background-color: $white;
+    color: $veryLightRed;
+    transition: all 150ms ease-in-out;
+  }
+}
+
+// Visibility
+.hide-for-mobile {
+  // hide for mobile and tablet
+  @include breakpoint-down(medium) {
+      display: none;
+  }
+}
+
+.hide-for-desktop {
+  // hide for desktop viewport widths
+  @include breakpoint-up(large) {
+      display: none;
+  }
+}
